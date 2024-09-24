@@ -1,4 +1,4 @@
-# Aplicativo de Previsão do Tempo
+# ControlDate - Cadastro e Login
 
 Este é um projeto desenvolvido como parte de uma extensão acadêmica, cujo objetivo é gerenciar o controle de vencimento de produtos de forma eficiente, utilizando uma interface web com funcionalidades de cadastro e login.
 
