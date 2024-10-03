@@ -85,3 +85,7 @@ loginButton.addEventListener('click', async () => {
         alert('Erro no login. Tente novamente.');
     }
 });
+//logout
+
+
+

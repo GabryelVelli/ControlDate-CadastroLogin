@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ControlDate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="inicio.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+</head>
+<body>
+    <button class="botao-menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="menu-lateral">
+        <ul>
+            <li><a href="inicio.html"><i class="fa-solid fa-house"></i>Home</a></li>
+            
+            <li><a href="adicionarproduto.html"><i class="fa-solid fa-plus"></i>Adicionar Produto</a></li>
+            <li><a href="produtoscadastrados.html"><i class="fa-solid fa-list"></i>Seus Registros</a></li>
+            <li><a href="usuario.html"><i class="fa-solid fa-user"></i>Perfil</a></li>
+            <li><a href="configuraçoes.html"><i class="fa-solid fa-gear"></i>Configurações</a></li>
+            <li><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i>Sair da Conta</a></li>
+        </ul>
+    </nav>
+
+    <div class="background">
+
+    </div>
+
+    <main class="conteudo">
+        <h1><i class="fa-solid fa-triangle-exclamation"></i>Control<span style="color: black">Date</span></h1>
+        <hr>
+        <h2><i class="fa-solid fa-plus"></i>Cadastrar Produto</h2>
+        <p>Cadastre Seus Produtos Aqui.</p>
+        <p>Após Cadastrar os produtos estarão disponiveis nos seus Registros.</p>
+
+        <div class="cadastroprod">
+        <form>
+            <br><br>
+            <label>Nome do Produto:</label><br>
+            <input type="text" placeholder="Ex:Coca-Cola 2L" required>
+            <br><br>
+            <label>Codigo de barras:</label><br>
+            <input type="text" placeholder="Codigo de Barras" required>
+            <br><br>
+            <label>Vencimento:</label><br>
+            <input type="date" placeholder="12/12/2024" required>
+            <br><br>
+            <label>Quantidade:</label><br>
+            <input type="number" min="1" max="100" required>
+            <br><br>
+            <label>Fornecedor:</label><br>
+            <input type="text" placeholder="Coca-Cola">
+            <br><br>
+            <label>Categoria:</label><br>
+            <select id="categoria" name="categoria" required>
+                <option value="" disabled selected>Escolha uma categoria</option>
+                <option value="frutas">Frutas</option>
+                <option value="verduras_legumes">Verduras e Legumes</option>
+                <option value="graos_cereais">Grãos e Cereais</option>
+                <option value="carnes">Carnes</option>
+                <option value="laticinios">Laticínios</option>
+                <option value="paes">Pães e Massas</option>
+                <option value="bebidas">Bebidas</option>
+                <option value="doces">Doces e Sobremesas</option>
+                <option value="outros">Outros</option>
+            </select>
+
+            <br><br>
+
+            <label>Alerta:</label><br>
+            <select id="notificacao" required>
+                <option value="" disabled selected>Escolha o Alerta</option>
+                <option value="alerta-1-dia">Alertar 1 dias antes</option>
+                <option value="alerta-3-dia">Alertar 3 dias antes</option>
+                <option value="alerta-7-dia">Alertar 7 dias antes</option>
+                <option value="alerta-15-dia">Alertar 15 dias antes</option>
+                <option value="alerta-30-dia">Alertar 30 dias antes</option>
+            </select>
+            <br><br>
+            <button type="submit" class="button">
+                <span class="button__text">Add Item</span>
+                <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+              </button>
+        </form>
+    </div>
+
+
+    </main>
+</body>
+<script src="scriptinicio.js"></script>
+
+</html>
