@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ControlDate - Cadastro Produtos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="inicio.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+</head>
+<body>
+    <button class="botao-menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="menu-lateral">
+        <ul>
+            <li><a href="telainicial.html"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="cadastrarproduto.html"><i class="fa-solid fa-plus"></i>Adicionar Produto</a></li>
+            <li><a href="Estoque.html"><i class="fa-solid fa-list"></i>Seu Estoque</a></li>
+            <li><a href="empresa.html"><i class="fa-solid fa-building-user"></i>Empresa</a></li>
+            <li><a href="usuario.html"><i class="fa-solid fa-user"></i>Perfil</a></li>
+            <li><a href="configuraçoes.html"><i class="fa-solid fa-gear"></i>Configurações</a></li>
+            <li><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i>Sair da Conta</a></li>
+        </ul>
+    </nav>
+
+    <div class="background">
+
+    </div>
+
+    <main class="conteudo">
+        <h1><i class="fa-solid fa-triangle-exclamation"></i>Control<span style="color: black">Date</span></h1>
+        <hr>
+        <h2><i class="fa-solid fa-plus"></i>Cadastrar Produto</h2>
+        <p>Cadastre Seus Produtos Aqui.</p>
+        <p>Após Cadastrar os produtos estarão disponiveis nos seus Registros.</p>
+
+        <div class="cadastroprod">
+            <form id="product-form">
+                <br><br>
+                <label>Nome do Produto:</label><br>
+                <input type="text" id="nome" name="nome" placeholder="Ex:Coca-Cola 2L" required>
+                <br><br>
+                <label>Código de Barras:</label><br>
+                <input type="text" id="codigoBarras" name="CodigoBarras" placeholder="Código de Barras" required>
+                <br><br>
+                <label>Vencimento:</label><br>
+                <input type="date" id="vencimento" name="Vencimento" required>
+                <br><br>
+                <label>Quantidade:</label><br>
+                <input type="number" id="quantidade" name="Quantidade" min="1" max="100" required>
+                <br><br>
+                <label>Fornecedor:</label><br>
+                <input type="text" id="fornecedor" name="fornecedor" placeholder="Coca-Cola">
+                <br><br>
+                <label>Categoria:</label><br>
+                <input type="text" id="categoria" name="categoria" required placeholder="Bebida">
+                <br><br>
+                <!--
+                <label>Alerta:</label><br>
+                <select id="notificacao" name="alerta" required>
+                    <option value="" disabled selected>Escolha o Alerta</option>
+                    <option value="1">Alertar 1 dia antes</option>
+                    <option value="3">Alertar 3 dias antes</option>
+                    <option value="7">Alertar 7 dias antes</option>
+                    <option value="15">Alertar 15 dias antes</option>
+                    <option value="30">Alertar 30 dias antes</option>
+                </select>
+                -->
+                <br><br>
+                <button type="submit" class="button">Adicionar Produto</button>
+            </form>
+        </div>
+
+    <div id="produtosContainer"></div>
+
+    </main>
+</body>
+
+<script>
+ // Função para enviar o formulário
+        document.getElementById('product-form').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const nome = document.getElementById('nome').value;
+            const codigoBarras = document.getElementById('codigoBarras').value;
+            const vencimento = document.getElementById('vencimento').value;
+            const quantidade = document.getElementById('quantidade').value;
+            const fornecedor = document.getElementById('fornecedor').value;
+            const categoria = document.getElementById('categoria').value;
+
+            const produto = {
+                nome,
+                codigoBarras,
+                vencimento,
+                quantidade,
+                fornecedor,
+                categoria,
+            };
+
+            try {
+                const resposta = await fetch('http://localhost:3000/add-produto', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + localStorage.getItem('token') // Supondo que você tenha o token armazenado
+                    },
+                    body: JSON.stringify(produto)
+                });
+
+                if (resposta.status === 201) {
+                    alert('Produto cadastrado com sucesso!');
+                } else {
+                    alert('Erro ao cadastrar produto');
+                }
+            } catch (error) {
+                console.error('Erro ao cadastrar produto:', error);
+                alert('Erro ao cadastrar produto');
+            }
+        });
+
+</script>
+
+<script src="scriptinicio.js"></script>
+
+</html>

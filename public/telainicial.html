@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ControlDate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="inicio.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+</head>
+<body>
+    <button class="botao-menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="menu-lateral">
+        <ul>
+            <li><a href="telainicial.html"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="cadastrarproduto.html"><i class="fa-solid fa-plus"></i>Adicionar Produto</a></li>
+            <li><a href="Estoque.html"><i class="fa-solid fa-list"></i>Seu Estoque</a></li>
+            <li><a href="empresa.html"><i class="fa-solid fa-building-user"></i>Empresa</a></li>
+            <li><a href="usuario.html"><i class="fa-solid fa-user"></i>Perfil</a></li>
+            <li><a href="configuraçoes.html"><i class="fa-solid fa-gear"></i>Configurações</a></li>
+            <li><a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i>Sair da Conta</a></li>
+        </ul>
+    </nav>
+
+    <div class="background">
+
+    </div>
+
+    <main class="conteudo">
+        <h1><i class="fa-solid fa-triangle-exclamation"></i>Control<span style="color: black">Date</span></h1>
+        <hr>
+        <h2><i class="fa-solid fa-chart-pie"></i>Dashboard</h2>
+        <p>Nesta Sessão você tem acesso a mais informações do seus produtos.</p>
+        <div class="dashboard">
+            <div class="card">
+                <a href="produtoscadastrados.html"></a><h3>Total de Produtos</h3>
+                <p>0</p>
+            </div>
+            <div class="card">
+                <h3>Produtos Vencidos</h3>
+                <p>0</p>
+            </div>
+            <div class="card">
+                <h3>Próximos do Vencimento</h3>
+                <p>0</p>
+            </div>
+            <div class="card">
+                <h3>Produtos Seguros</h3>
+                <p>0</p>
+            </div>
+        </div>
+       <h1><i class="fa-solid fa-circle-info"></i>Como Usar O Control<span style="color: rgb(0, 0, 0)">Date</span></h1>
+       <p>
+        Para utilizar o nosso aplicativo de forma simples e eficaz, basta criar sua conta e, em seguida, acessar a seção "Adicionar Produto". Nessa área, você poderá cadastrar seus produtos para realizar o controle de vencimentos. Todos os produtos cadastrados estarão disponíveis para consulta na seção "Seus Registros", onde será possível visualizar, editar ou excluir produtos, além de acompanhar as respectivas datas de validade.
+       </p>
+
+    </main>
+</body>
+<script src="scriptinicio.js"></script>
+</html>
