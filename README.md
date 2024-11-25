@@ -1,4 +1,4 @@
-# ControlDate - Cadastro e Login
+# ControlDate - Sistema de Controle de Estoque
 
 Este é um projeto desenvolvido como parte de uma extensão acadêmica, cujo objetivo é gerenciar o controle de vencimento de produtos de forma eficiente, utilizando uma interface web com funcionalidades de cadastro e login.
 
@@ -6,9 +6,11 @@ Este é um projeto desenvolvido como parte de uma extensão acadêmica, cujo obj
 
 - Cadastro de usuários: Permite criar uma conta de usuário inserindo nome, email e senha.
 - Login: Autenticação segura utilizando senha criptografada.
+- Sistema de logout: Função para sair da sessão com segurança.
+- Sistema de Estabelecimento: Função para adicionar seu estabelecimento e unidade a partir de um formulario, podendo visualizar a qualquer momento
 - Gerenciamento de produtos: (Futuro) Adicionar, editar e remover produtos cadastrados.
 - Controle de vencimento: (Futuro) Exibir alertas para produtos próximos do vencimento.
-- Sistema de logout: (Futuro) Função para sair da sessão com segurança.
+
 
 ## Tecnologias Utilizadas
 - **Backend**: Node.js
